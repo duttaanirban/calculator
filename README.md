@@ -1,6 +1,6 @@
 # Simple Calculator
 
-Check it out here ---> 
+Check it out here ---> https://duttaanirban.github.io/calculator/
 
 ## Overview
 
