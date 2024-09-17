@@ -1,226 +1,159 @@
 body {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(105,105,215,1) 48%, rgba(0,212,255,0.8346988453584558) 100%);
-}
-
-.parent {
-    display: flex;
-    /*justify-content: space-evenly;*/
+    background: linear-gradient(135deg, #6a0dad, #9b59b6); /* Purple to Violet Gradient */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 #header {
-    margin-top : 100px;
-    margin-left: 550px;
-    margin-right: 540px;
-    border-style: solid;
-    border-width: 5px;
-    padding : 5px;
-    font-family: monospace;
-    color : black;
-    text-align: center;
-} 
+    margin: 1rem auto;
+    border: 2px solid #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: fit-content;
+}
+
+#header h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+}
 
 #container {
-    /*width: 1000px; */
-    /*! float: center; */
-    width: 100%;
-    height: 500px;
-    /*margin: 20px auto auto auto;*/
-    padding : 5px;
-    /*margin-bottom: 20px;*/
-    /*margin-left: 545px;
-    margin-right: 500px;*/
-  
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 2rem);
+    padding: 0 1rem;
 }
 
 #calculator {
-    width: 500px;
-    height: 630px;
-    margin-left: 500px;
-    margin-right: 550px;
-    /*border-style: solid;
-    border-width: 2px;*/
-    padding : 5px;
-    color : rgb(26, 240, 26);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
 }
-
-@media (hover: none) and (pointer: coarse) and (orientation: portrait) {
-    #calculator {
-        width: 91%;
-        margin-left: 1.4%;
-        margin-right: 0.7%;
-        height: 720px;
-    }
-}
-
-@media (hover: none) and (pointer: coarse) and (orientation: landscape){
-
- #calculator {
-    height: 530px;
-    width: 94%;
-    margin-left: 1.4%;
-  }
-  
- #header {
-    height: 29.833px;
-  }
-  
- #header > h1:nth-child(1) {
-    height: 17px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  
- #history-value {
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  
- #result {
-    height: 80px;;
-  }
-  
- #history {
-    padding-top: 5px;
-  }
-  
- #keyboard {
-    height: 125px;
-  }
-  
- #footer {
-    height: 26px;
-  }
-
- #footer > h2:nth-child(1) {
-    height: 27px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-  }
-  
- #container {
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-  
- #calculator {
-    margin-right: 0px;
-    margin-left: 15px;
-  }
-
- #calculator {
-      margin-left: 0px;
-      width: auto;
- }
-
- #container {
-    width: auto;
-  }
-}
-
 
 #result {
-    width: 395px;
-    height: 100px;
-    margin : 4px auto auto auto;
-    border-style: solid;
-    border-width: 5px;
-    padding : 5px;
-    margin-top: 0;
-    padding-left: 1%;
-    padding-right: 1%;
-    color : rgb(0, 0, 0);
+    background: #333;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
 }
 
-#history {
-    margin-top: 4%;
-    height: 40%;
-    width: 100%;
+#history, #output {
     text-align: right;
-    font-size: large;
-    font-family: monospace;
+    font-family: 'Roboto', sans-serif;
 }
 
-#output {
-    
-    height: 60%;
-    width: 100%;
-    font-size: xx-large;
-    text-align: right;
-    font-family: monospace;
+#history-value {
+    font-size: 1.25rem;
+    color: #aaa;
+}
+
+#output-value {
+    font-size: 2rem;
 }
 
 #keyboard {
-    width: 400px;
-    height: 500px;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    border-style: solid;
-    border-width: 5px;
-    padding-top: 5px;
-    padding-right: 0.5%;
-    padding-left: 0.5%;
-    padding-bottom: 0.5%;
-    color : rgb(0, 0, 0);
-    font-family: monospace;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
 }
 
-.operators, .numbers , .empty {
-    width:100px;
-    height:100px;
-    float: left;
-    font-family: monospace;
-    border-width: 0.5;
+button {
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    
+    cursor: pointer;
+    padding: 1rem;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .operators {
-    color: red;
-    background-color: black;
-    font-size: large;
-    font-weight: bold;
-    
-    padding: 5px;
+    background-color: #e74c3c;
+    color: #fff;
 }
 
-.numbers, .empty {
-    color : rgb(26, 240, 26);
-    background-color: black;
-    font-size: large;
-    font-weight: bold;
+.numbers {
+    background-color: #2ecc71;
+    color: #fff;
 }
 
-.operators, .numbers {
-    cursor: pointer;
-}
-
-.operators:active, .numbers:active {
-    font-size: medium;
-}
-
-.operators:focus, .numbers:focus, .empty:focus {
-    outline: 0;
+.empty {
+    background-color: transparent;
 }
 
 .operators:hover {
-    color : rgb(26, 240, 26);
-    font-size: medium;
+    background-color: #c0392b;
 }
 
 .numbers:hover {
-    color: red;
-    font-size: medium;
+    background-color: #27ae60;
 }
 
-.fa-twitter-square, .fa-github-square {
-    color : rgb(26, 240, 26);
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #calculator {
+        width: 95%;
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    #result {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    #history-value {
+        font-size: 1rem;
+    }
+
+    #output-value {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
 }
 
-.fa-twitter-square:hover , .fa-github-square:hover {
-    font-size: large;
-    opacity: 0.5;
+@media (max-width: 480px) {
+    #header h1 {
+        font-size: 1.5rem;
+    }
+
+    #result {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #history-value {
+        font-size: 0.9rem;
+    }
+
+    #output-value {
+        font-size: 1.25rem;
+    }
+
+    #keyboard {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
 }
